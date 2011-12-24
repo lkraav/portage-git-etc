@@ -9,7 +9,7 @@ case "$EBUILD_PHASE" in
         STATUS=$(eval $GITCMD status -uno -s)
         [ -n "${STATUS}" ] && die "Error: $ETC is not clean"
     ;;
-    "clean")
+    "postinst")
         eval $GITCMD add $ETC
         eval $GITCMD commit -q -a -m \"emerge $CATEGORY/$P\"
     ;;     
