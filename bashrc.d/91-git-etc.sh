@@ -10,8 +10,11 @@ case "$EBUILD_PHASE" in
         [ -n "${STATUS}" ] && die "Error: $ETC is not clean"
     ;;
     "postinst")
-        etc-update 0</dev/tty 1>/dev/tty || die "Error: etc-update somehow failed!"
-        eval $GITCMD add $ETC
-        eval $GITCMD commit -q -a -m \"emerge $CATEGORY/$P\"
     ;;     
 esac
+
+post_pkg_postinst() {
+    etc-update 0</dev/tty 1>/dev/tty || die "Error: etc-update somehow failed!"
+    eval $GITCMD add $ETC
+    eval $GITCMD commit -q -a -m \"emerge $CATEGORY/$P\"
+}
