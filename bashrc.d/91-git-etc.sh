@@ -2,7 +2,8 @@
 
 echo Phase: $EBUILD_PHASE
 ETC="${ROOT}etc"
-GITCMD="GIT_DIR=$ETC/.git GIT_WORK_TREE=$ETC git"
+HOST="$(hostname)"
+GITCMD="GIT_DIR=$ETC/.git GIT_WORK_TREE=$ETC GIT_AUTHOR_NAME=Portage GIT_AUTHOR_EMAIL=portage@${HOST} git"
 
 case "$EBUILD_PHASE" in
     "setup")
