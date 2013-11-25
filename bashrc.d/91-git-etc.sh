@@ -1,8 +1,9 @@
+#!/bin/bash
 # portage/bashrc.d/91-git-etc.sh 0.1
 
 ETC="${PORTAGE_CONFIGROOT%/}/etc"
-HOST="$(hostname)"
 GITCMD="GIT_DIR=$ETC/.git GIT_WORK_TREE=$ETC GIT_AUTHOR_NAME=Portage GIT_AUTHOR_EMAIL=portage@${HOST} git"
+HOST="$(hostname)"
 MYPREFIX="[91]"
 
 GitEtcAll() {
