@@ -1,6 +1,5 @@
 #!/bin/bash
-# portage/bashrc.d/91-git-etc.sh 0.2
-
+VERSION="0.3"
 ETC="${PORTAGE_CONFIGROOT%/}/etc"
 GITCMD="GIT_DIR=$ETC/.git GIT_WORK_TREE=$ETC GIT_AUTHOR_NAME=Portage GIT_AUTHOR_EMAIL=portage@${HOST} git"
 HOST="$(hostname)"
