@@ -13,6 +13,8 @@ GitEtcSetup() {
     BashrcdTrue ${ENABLE_91_GIT_ETC} || return 0
 
     STATUS=$(eval $GITCMD status -unormal -s)
+    [ -n "${STATUS}" ] && eval $GITCMD-sh 0</dev/tty 1>/dev/tty # resolve issues with git-sh
+    STATUS=$(eval $GITCMD status -unormal -s)
     [ -n "${STATUS}" ] && die "${MYPREFIX} Error: $ETC is not clean"
 }
 
@@ -25,5 +27,5 @@ GitEtcPostInst() {
 }
 
 BashrcdPhase all GitEtcAll
-BashrcdPhase setup GitEtcSetup
+BashrcdPhase clean GitEtcSetup
 BashrcdPhase postinst GitEtcPostInst
