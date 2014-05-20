@@ -12,7 +12,7 @@ GitEtcAll() {
 GitEtcSetup() {
     BashrcdTrue ${ENABLE_91_GIT_ETC} || return 0
 
-    STATUS=$(eval $GITCMD status -uno -s)
+    STATUS=$(eval $GITCMD status -unormal -s)
     [ -n "${STATUS}" ] && die "${MYPREFIX} Error: $ETC is not clean"
 }
 
