@@ -3,7 +3,7 @@ VERSION="0.3"
 ETC="${PORTAGE_CONFIGROOT%/}/etc"
 GITCMD="GIT_DIR=$ETC/.git GIT_WORK_TREE=$ETC GIT_AUTHOR_NAME=Portage GIT_AUTHOR_EMAIL=portage@${HOST} git"
 HOST="$(hostname)"
-MYPREFIX="[91.${VERSION}]"
+MYPREFIX="[91.${VERSION}@${HOST} ${ROOT}]"
 
 GitEtcAll() {
     echo "${MYPREFIX} Phase: $EBUILD_PHASE"
