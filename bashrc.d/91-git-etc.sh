@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="0.4"
+VERSION="0.5"
 ETC="${PORTAGE_CONFIGROOT%/}/etc"
 GIT_AUTHOR_NAME=Portage
 GIT_AUTHOR_EMAIL=portage@${HOSTNAME}
